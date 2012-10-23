@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GIFhub</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="header">
+	<h1>GIFhub</h1>
+	<h6>Rockin GIFs like it's 1998</h6>
+</div>
+
+<%= yield %>
+
+</body>
+</html>
