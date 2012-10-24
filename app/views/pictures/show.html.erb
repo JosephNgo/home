@@ -1,3 +1,6 @@
-<h2><%= @picture.id %></h2>
-<img src="<%= @picture.url %>" width="150" height="150">
-<%= link_to "Delete", picture_url(@picture.id), :method => 'delete' %>
+<h2 class="title">Image#<%= @picture.id %></h2>
+<div class=image_frame>
+<img src="<%= @picture.url %>" >
+<p><%= link_to "Edit", edit_picture_url(@picture.id), :method => 'edit' %></p>
+<p><%= link_to "Delete", picture_url(@picture.id), :method => 'delete' %></p>
+</div>

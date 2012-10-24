@@ -11,18 +11,18 @@
 	  <%= text_field_tag :title %>
 	  
 	  <%= submit_tag "Add Picture!" %>
-	  <%= link_to "or Cancel", pictures_url %>
+	  
 	<% end %>
 </div>
 
-<div>
+<div class="image_frame">
 <ul>
 	<% @picture_urls.each do |picture| %>
-		<div class="image_frame">
+		<div class="picture_box">
 			<li><%= link_to image_tag(picture.url), picture_url(picture.id) %>
 		</div>
 		<div class="comment_box">
-			<p><%= picture.comments %></p>
+			<%= picture.comments %>
 		</div>
 		<div class="links_box">
 			<%= link_to "Delete", picture_url(picture.id), :method => 'delete' %>
