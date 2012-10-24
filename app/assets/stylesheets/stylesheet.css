@@ -6,8 +6,13 @@ body {
 	margin-right:auto;
 }
 
+.title {
+	background-color: red;
+}
+
 .header {
 	background-color: white;
+	background-image: url("cutcube.png");
 	padding: none;
 	text-align: center;
 }
@@ -26,8 +31,13 @@ body {
 }
 
 .comment_box {
-	background-color: white;
+	background-color: gray;
 	width: 600px;
+}
+
+.links_box {
+	background-color: white;
+	width: 200px;
 }
 
 ul {

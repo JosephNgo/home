@@ -1,3 +1,3 @@
 class Picture < ActiveRecord::Base
-  attr_accessible :title, :url, :commentsPirc
+  attr_accessible :title, :url, :comments
 end

@@ -1,0 +1,17 @@
+<p class = "title">Edit Picture # <%= @picture.id %> </p>
+<div class = "add_pic">
+<%= form_tag picture_url(@picture.id), :method => 'put' do %>
+	<%= label_tag :url, "URL: " %>
+	<%= text_field_tag :url, @picture.url %>
+
+	<%= label_tag :comments, 'Comments:' %>
+  	<%= text_field_tag :comments, @picture.comments %>
+
+  	<%= label_tag :title, 'Title' %>
+  	<%= text_field_tag :title, @picture.title %>
+  
+  	<%= submit_tag "Update Picture!" %>
+  	<%= link_to "or Cancel", pictures_url %>
+<% end %>
+
+</div>

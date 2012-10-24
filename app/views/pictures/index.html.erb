@@ -1,20 +1,37 @@
-	
-<form class="add_pic" action="/pictures" method="post">
-	Enter URL: <input type="text" name="sample_text_field">
-	Enter a comment: <input type="text" name="comment_text_field">
-	<%= submit_tag "Start the Magic"%>
-</form>
 
+<div class = "add_pic">
+	<%= form_tag pictures_url do %>
+	  <%= label_tag :url, "URL:" %>
+	  <%= text_field_tag :url %>
 
+	  <%= label_tag :comments, 'Comments:' %>
+  	  <%= text_field_tag :comments %>
+	  
+	  <%= label_tag :title, 'Title:' %>
+	  <%= text_field_tag :title %>
+	  
+	  <%= submit_tag "Add Picture!" %>
+	  <%= link_to "or Cancel", pictures_url %>
+	<% end %>
+</div>
 
+<div>
 <ul>
 	<% @picture_urls.each do |picture| %>
 		<div class="image_frame">
-			<li><img src="<%= picture.url %>"></li>
-			<p class="comment_box"><%= picture.comments %></p>
+			<li><%= link_to image_tag(picture.url), picture_url(picture.id) %>
+		</div>
+		<div class="comment_box">
+			<p><%= picture.comments %></p>
+		</div>
+		<div class="links_box">
+			<%= link_to "Delete", picture_url(picture.id), :method => 'delete' %>
+			<%= link_to "Edit", edit_picture_url(picture.id), :method => 'edit' %>
+			</li>
 		</div>
 	<% end %>
 </ul>
+</div>
 
 
 
