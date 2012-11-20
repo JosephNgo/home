@@ -1,0 +1,34 @@
+
+<div class = "add_pic">
+	<%= form_tag pictures_url do %>
+	  <%= label_tag :url, "URL:" %>
+	  <%= text_field_tag :url %>
+
+	  <%= label_tag :comments, 'Comments:' %>
+  	  <%= text_field_tag :comments %>
+	  
+	  <%= label_tag :title, 'Title:' %>
+	  <%= text_field_tag :title %>
+	  
+	  <%= submit_tag "Add Picture!" %>
+	  
+	<% end %>
+</div>
+
+<div class="image_frame">
+<ul>
+	<% @picture_urls.each do |picture| %>
+		<div class="picture_box">
+			<li><%= link_to image_tag(picture.url), picture_url(picture.id) %>
+		</div>
+		<div class="comment_box">
+			<%= picture.comments %>
+		</div>
+		<div class="links_box">
+			<%= link_to "Delete", picture_url(picture.id), :method => 'delete' %>
+			<%= link_to "Edit", edit_picture_url(picture.id), :method => 'edit' %>
+			</li>
+		</div>
+	<% end %>
+</ul>
+</div>
